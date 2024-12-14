@@ -1,0 +1,8 @@
+.fadeBox {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fadeBox.visible {
+    opacity: 1;
+}

@@ -1,0 +1,108 @@
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    width: 100vw; 
+    margin: 0;
+  }
+  
+  .product-container {
+    display: flex;
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%; 
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    position: relative;
+  }
+  
+  .product-details {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+    text-align: right;
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+    border-right: 1px solid #ddd; 
+  }
+  
+  .product-image-container {
+    width: 300px; 
+    height: auto;
+    border-left: 1px solid #ddd; 
+    overflow: hidden;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .discount-box {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .product-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .product-category,
+  .product-brand {
+    font-size: 18px;
+    color: gray;
+    margin: 5px 0;
+  }
+  
+  .product-price.original-price {
+    font-size: 18px;
+    color: gray;
+    text-decoration: line-through; 
+    margin: 5px 0;
+  }
+  
+  .product-price.discount-price {
+    font-size: 22px;
+    color: red; 
+    font-weight: bold; 
+    margin: 5px 0;
+  }
+  
+  .product-description {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .product-line {
+    border-bottom: 1px solid #ddd;
+    margin: 10px 0;
+  }
+  
+  .add-to-cart-button {
+    background-color: #d32f2f;
+    color: #ffffff;
+    margin-top: 15px;
+    padding: 8px 20px;
+    border-radius: 30px; 
+    font-size: 18px;
+    font-family: 'Vazirmatn', sans-serif;
+  }
+  
+  .add-to-cart-button:hover {
+    background-color: #ffffff;
+    color: #d32f2f;
+  }
+  
