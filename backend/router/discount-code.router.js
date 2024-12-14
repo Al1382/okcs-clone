@@ -54,11 +54,9 @@ router.post('/fa', async (req, res) => {
   const product = await ProductModel
     .findOne({ id: body.productId })
     .select('id description name category brand price image discountprice discount')
-  console.log(discountCode);
-  console.log(req.params.id);
 
 
-  if (discountCode.brand != product.brand) {
+  if (discountCode.brand !== product.brand) {
     return res.status(400).json("این کد تخفیف برای این برند تا معتبر است")
   }
 
