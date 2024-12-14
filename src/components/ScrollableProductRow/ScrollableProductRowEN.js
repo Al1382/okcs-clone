@@ -49,7 +49,7 @@ const ScrollableProductRowEN = ({ products, scrollInterval, adImageSrc }) => {
 
   // Handle click on a product card to navigate to its product page
   const handleCardClick = (productId) => {
-    navigate(`/ProductsPageEN/${productId}`);
+    navigate(`/en/ProductsPage/${productId}`);
   };
 
   return (

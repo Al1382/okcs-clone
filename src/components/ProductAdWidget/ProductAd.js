@@ -16,7 +16,7 @@ const ProductAd = ({
   };
 
   return (
-    <Link to={`/ProductsPage/${id}`} style={{ textDecoration: 'none' }}>
+    <Link to={`/fa/ProductsPage/${id}`} style={{ textDecoration: 'none' }}>
       <div className="product-ad">
         <img src={imgSrc} alt={productName} className="product-image" />
         <div className="product-info">

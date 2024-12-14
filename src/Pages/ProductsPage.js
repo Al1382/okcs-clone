@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import TextField from '@mui/material/TextField';
 import products from '../data/Products';
 import './ProductsPage.css';
 
@@ -18,9 +19,24 @@ function ProductsPage() {
   const product = products.find(p => p.id === parseInt(id));
 
   const [value, setValue] = useState(0); // State for tabs
+  const [modalOpen, setModalOpen] = useState(false); // State for modal
+  const [giftCode, setGiftCode] = useState(''); // State for gift code
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
+
+  const handleGiftCodeSubmit = () => {
+    console.log(`Gift Code Entered: ${giftCode}`); // Handle gift code logic
+    setModalOpen(false);
   };
 
   const a11yProps = (index) => ({
@@ -35,7 +51,7 @@ function ProductsPage() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <div className="page-container"> {/* New wrapper for centering */}
+      <div className="page-container">
         <div className="product-container">
           <div className="product-details">
             <div className="discount-box">{convertToPersianNumber(product.discount)}% تخفیف</div>
@@ -67,7 +83,26 @@ function ProductsPage() {
               خرید کن
             </Button>
 
-            {/* Tabs for Description */}
+            <Button
+              variant="outlined"
+              onClick={handleModalOpen}
+              sx={{
+                backgroundColor: "#ffffff",
+                color: "#000000",
+                border: "1px solid #000000",
+                "&:hover": {
+                  backgroundColor: "#000000",
+                  color: "#ffffff",
+                },
+                fontFamily: 'Vazirmatn',
+                fontSize: "16px",
+                borderRadius: "30px",
+                padding: "8px 20px",
+              }}
+            >
+              اعمال کد تخفیف
+            </Button>
+
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
               <Tabs value={value} onChange={handleChange} aria-label="product details tabs">
                 <Tab
@@ -87,7 +122,6 @@ function ProductsPage() {
               </Tabs>
             </Box>
             
-            {/* Tab Panel for Description */}
             <div
               role="tabpanel"
               hidden={value !== 0}
@@ -108,6 +142,48 @@ function ProductsPage() {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {modalOpen && (
+        <div className="modal-backdrop">
+          <div className="custom-modal">
+            <button className="close-button" onClick={handleModalClose}>×</button>
+            <h2 className="modal-title">وارد کردن کد تخفیف</h2>
+            <TextField
+              label="کد تخفیف"
+              variant="outlined"
+              fullWidth
+              value={giftCode}
+              onChange={(e) => setGiftCode(e.target.value)}
+              sx={{
+                marginBottom: "20px",
+                textAlign: "right",
+                "& label": {
+                  fontFamily: "Vazirmatn",
+                },
+                "& input": {
+                  fontFamily: "Vazirmatn",
+                },
+              }}
+            />
+            <Button
+              variant="contained"
+              onClick={handleGiftCodeSubmit}
+              sx={{
+                backgroundColor: "#d32f2f",
+                color: "#ffffff",
+                "&:hover": {
+                  backgroundColor: "#ffffff",
+                  color: "#d32f2f",
+                },
+                fontFamily: 'Vazirmatn',
+              }}
+            >
+              اعمال
+            </Button>
+          </div>
+        </div>
+      )}
     </React.Fragment>
   );
 }

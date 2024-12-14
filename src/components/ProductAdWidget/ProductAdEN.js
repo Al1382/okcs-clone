@@ -11,7 +11,7 @@ const ProductAdEN = ({
   discountPercentage,
 }) => {
   return (
-    <Link to={`/ProductsPageEN/${id}`} style={{ textDecoration: "none" }}>
+    <Link to={`/en/ProductsPage/${id}`} style={{ textDecoration: "none" }}>
       <div className="product-ad">
         <img src={imgSrc} alt={productName} className="product-image" />
         <div className="product-info">

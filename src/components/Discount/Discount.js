@@ -10,7 +10,7 @@ const Discount = () => {
         <ScrollableProductRow
           products={products} 
           scrollInterval={3000}
-          adImageSrc="icons/calender.png"
+          adImageSrc="/icons/calender.png"
         />
       </div>
     </div>

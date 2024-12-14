@@ -21,7 +21,7 @@ const HeaderEN = () => {
     { image: "/icons/festivals.png", text: "Festivals" },
     { image: "/icons/club.png", text: "Customer Club" },
     { image: "/icons/online-shopping.png", text: "Online Shop" },
-    { image: "/icons/products.png", text: "Products", link: "/ProductsListPageEN" },
+    { image: "/icons/products.png", text: "Products", link: "/en/ProductsListPage" },
   ];
 
   const handleLanguageToggle = () => {
@@ -29,9 +29,9 @@ const HeaderEN = () => {
     toggleLanguage();
     // Navigate to the correct home page based on the selected language
     if (language === "fa") {
-      navigate("/HomeEN"); // Redirect to the English home page
+      navigate("/en/Home"); // Redirect to the English home page
     } else {
-      navigate("/Home"); // Redirect to the Persian home page
+      navigate("/fa/Home"); // Redirect to the Persian home page
     }
   };
 
@@ -198,7 +198,7 @@ const HeaderEN = () => {
             ))}
           </ButtonGroup>
 
-          <Link to="/HomeEN">
+          <Link to="/en/Home">
             <IconButton disableRipple sx={{ padding: 0 }}>
               <img
                 src="/icons/logo.png"
